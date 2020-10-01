@@ -1,3 +1,9 @@
+..  toctree::
+    :hidden:
+
+    cli
+    firefly.js
+
 #######
 Firefly
 #######
