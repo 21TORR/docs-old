@@ -19,8 +19,8 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = '21TORR'
-copyright = '2020, 21TORR'
 author = '21TORR'
+copyright = author
 
 
 # -- General configuration ---------------------------------------------------
@@ -48,6 +48,14 @@ master_doc = 'index'
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    'logo_only': True,
+    'navigation_depth': 5,
+    'style_external_links': True,
+    'sticky_navigation': True,
+}
+
+html_logo = "../assets/img/logo.svg"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
