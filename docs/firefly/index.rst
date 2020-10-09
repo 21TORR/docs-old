@@ -100,3 +100,13 @@ Will build a production release. It will include source maps, minify all code, b
 
 Use this on the production / staging server.
 
+
+``init``
+===========
+
+.. code-block:: bash
+
+    pnpx firefly init
+
+Will initialize the common configuration files, that you need for (nearly) every Firefly project.
+Use this locally to initialize the project. Then adapt the files and commit them to the repository.
