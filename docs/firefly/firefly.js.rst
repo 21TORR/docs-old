@@ -6,7 +6,7 @@ Firefly is configured by putting a ``firefly.js`` in the root of your project. T
 
 The base file can look like this:
 
-.. code-block:: js
+.. code-block:: javascript
 
     const {Firefly} = require("@21torr/firefly");
 
@@ -25,13 +25,13 @@ The base file can look like this:
 
 The configuration of Firefly works by using the fluent methods on the configuration object, like this:
 
-.. code-block:: js
+.. code-block:: javascript
 
     const {Firefly} = require("@21torr/firefly");
 
     module.exports = (new Firefly())
         .js({
-            // ..
+            // ...
         })
         .scss({
             // ...
@@ -53,7 +53,7 @@ Available configuration options
 
     Example:
 
-    .. code-block:: js
+    .. code-block:: javascript
 
         .js({
             app: "asset/js/app.ts",

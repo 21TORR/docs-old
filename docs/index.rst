@@ -1,4 +1,5 @@
 ..  toctree::
+
     :caption: Firefly
     :hidden:
     :maxdepth: 4
@@ -7,6 +8,7 @@
     firefly/firefly.js
 
 .. toctree::
+
     :caption: Dune
     :hidden:
     :maxdepth: 4
@@ -14,6 +16,7 @@
     dune/index
 
 ..  toctree::
+
     :caption: Firefly
     :hidden:
     :maxdepth: 4
@@ -28,7 +31,7 @@
 This are the docs for all 21TORR internal libraries and tools.
 
 :doc:`firefly/index`
-    A build tool to build JS + SCSS apps.
+    A build tool to build JS + SCSS applications.
 
 :doc:`dune/index`
     A JS library, that provides helper functions for the most common tools.
