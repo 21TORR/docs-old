@@ -19,6 +19,7 @@
     :maxdepth: 4
 
     atlantis/index
+    atlantis/mixins
 
 ###########
 21TORR Docs
