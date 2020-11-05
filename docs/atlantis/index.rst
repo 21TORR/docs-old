@@ -4,6 +4,13 @@ Atlantis
 
 **Atlantis** is a library, that combines a lot of commonly used patterns in SCSS.
 
+Installation
+############
+
+.. code-block:: bash
+
+    pnpm install @21torr/atlantis
+
 
 Reset
 #####
