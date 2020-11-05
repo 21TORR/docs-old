@@ -14,7 +14,7 @@
     dune/index
 
 ..  toctree::
-    :caption: Firefly
+    :caption: Atlantis
     :hidden:
     :maxdepth: 4
 
