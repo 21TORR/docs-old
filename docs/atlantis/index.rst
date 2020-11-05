@@ -45,7 +45,6 @@ All available mixins:
 *   :ref:`flex-fixed-height() <atlantis/mixins/position/flex-fixed-height>`
 *   :ref:`flex-fixed-width() <atlantis/mixins/position/flex-fixed-width>`
 *   :ref:`hide-text() <atlantis/mixins/visibility/hide-text>`
-*   :ref:`inline-svg() <atlantis/mixins/svg/inline-svg>`
 *   :ref:`on-interaction() <atlantis/mixins/interaction/on-interaction>`
 *   :ref:`on-interaction() <atlantis/mixins/interaction/on-interaction>`
 *   :ref:`on-max-height() <atlantis/mixins/media-query/on-max-height>`
@@ -58,3 +57,11 @@ All available mixins:
 *   :ref:`system-fonts() <atlantis/mixins/font/system-fonts>`
 *   :ref:`text-overflow-ellipsis() <atlantis/mixins/visibility/text-overflow-ellipsis>`
 *   :ref:`transition() <atlantis/mixins/transition/transition>`
+
+
+Functions
+#########
+
+All available functions:
+
+*   :ref:`inline-svg() <atlantis/functions/svg/inline-svg>`

@@ -1,5 +1,4 @@
 ..  toctree::
-
     :caption: Firefly
     :hidden:
     :maxdepth: 4
@@ -8,7 +7,6 @@
     firefly/firefly.js
 
 .. toctree::
-
     :caption: Dune
     :hidden:
     :maxdepth: 4
@@ -16,13 +14,12 @@
     dune/index
 
 ..  toctree::
-
     :caption: Firefly
     :hidden:
     :maxdepth: 4
 
     atlantis/index
-    atlantis/mixins
+    atlantis/library
 
 ###########
 21TORR Docs

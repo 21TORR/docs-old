@@ -1,8 +1,6 @@
-######
-Mixins
-######
-
-Mixins
+#######
+Library
+#######
 
 Usage
 #####
@@ -13,9 +11,11 @@ Normally, you just import it in your ``helpers/_mixins.scss``:
 
     @forward "~@21torr/atlantis/mixins" as atlantis;
 
+and your remaining application just uses your ``_mixins.scss`` then.
 
-Library
-#######
+
+Mixins
+######
 
 Container
 =========
@@ -165,11 +165,24 @@ Position
 ``.center-children()``
 ======================
 
+.. code-block:: scss
+
+    @include atlantis.center-children;
+
+Centers all children. Sets ``display: flex`` with the centering settings on the element.
+
+
 
 .. _atlantis/mixins/position/center-element:
 
 ``.center-element()``
 =====================
+
+.. code-block:: scss
+
+    @include atlantis.center-element;
+
+Centers the element in the parent. Sets ``position: absolute`` + transforms on the element.
 
 
 .. _atlantis/mixins/position/fill-parent:
@@ -177,11 +190,23 @@ Position
 ``.fill-parent()``
 ==================
 
+.. code-block:: scss
+
+    @include atlantis.fill-parent;
+
+Positions (via ``position: absolute``) the element in the parent, so that it completely covers the parent.
+
 
 .. _atlantis/mixins/position/flex-equal-columns:
 
 ``.flex-equal-columns()``
 =========================
+
+.. code-block:: scss
+
+    @include atlantis.flex-equal-columns;
+
+Will set sibling elements to flex-based equal columns.
 
 
 .. _atlantis/mixins/position/flex-fill-height:
@@ -189,11 +214,23 @@ Position
 ``.flex-fill-height()``
 =======================
 
+.. code-block:: scss
+
+    @include atlantis.flex-fill-height;
+
+Sets the element to automatically fill the remaining height. Should be used with ``flex-direction: column`` on the parent.
+
 
 .. _atlantis/mixins/position/flex-fill-width:
 
 ``.flex-fill-width()``
 ======================
+
+.. code-block:: scss
+
+    @include atlantis.flex-fill-width;
+
+Sets the element to automatically fill the remaining width.
 
 
 .. _atlantis/mixins/position/flex-fixed-height:
@@ -201,11 +238,27 @@ Position
 ``.flex-fixed-height()``
 ========================
 
+.. code-block:: scss
+
+    @include atlantis.flex-fixed-height($height);
+
+Sets the element to a fixed flex height. It won't be resized in the flex context. Should be used with ``flex-direction: column`` on the parent.
+
+Takes an optional ``$height`` to manually fixate the size. If you omit it, it will just keeps its inherent size.
+
 
 .. _atlantis/mixins/position/flex-fixed-width:
 
 ``.flex-fixed-width()``
 =======================
+
+.. code-block:: scss
+
+    @include atlantis.flex-fixed-width($width);
+
+Sets the element to a fixed flex width. It won't be resized in the flex context.
+
+Takes an optional ``$width`` to manually fixate the size. If you omit it, it will just keeps its inherent size.
 
 
 
@@ -217,6 +270,16 @@ Scroll
 ``.smooth-scroll()``
 ====================
 
+.. code-block:: scss
+
+    @include atlantis.smooth-scroll;
+
+Lets the element smooth scroll.
+
+.. warning::
+
+    Will also set ``overflow: scroll``, so you will always have scroll bars on desktop.
+
 
 
 Size
@@ -227,11 +290,32 @@ Size
 ``.aspect-ratio()``
 ===================
 
+.. code-block:: scss
+
+    @include atlantis.aspect-ratio($width, $height);
+
+Applies the aspect-ratio trick (with ``padding-bottom`` and ``height: 0``).
+
+You should use it with just the aspect ratios:
+
+.. code-block:: scss
+
+    video {
+        @include atlantis.aspect-ratio(16, 9);
+    }
+
+
 
 .. _atlantis/mixins/size/square:
 
 ``.square()``
 =============
+
+.. code-block:: scss
+
+    @include atlantis.square($size);
+
+Sets ``$width`` and ``$height`` to the same ``$size`` value.
 
 
 
@@ -243,17 +327,24 @@ SVG
 ``.color-svg()``
 ================
 
+.. code-block:: scss
+
+    @include atlantis.color-svg($color);
+
+Sets the SVG coloring. It will set the ``fill`` for any child class ``._f`` and the ``stroke`` for any child class ``._s``.
+
 
 .. _atlantis/mixins/svg/svg-child:
 
 ``.svg-child()``
 ================
 
+.. code-block:: scss
 
-.. _atlantis/mixins/svg/inline-svg:
+    @include atlantis.svg-child;
 
-``.inline-svg()``
-=================
+Applies ``display: block`` to any ``svg`` child and automatically stretches it to it's parent size.
+Normally you want to use that for any svg and set the dimensions on the parent DOM element.
 
 
 
@@ -265,6 +356,21 @@ Transition
 ``.transition()``
 =================
 
+.. code-block:: scss
+
+    @include atlantis.transition($properties, $duration: .15s, $easing: ease-in-out, $will-change: true);
+
+Will automatically set ``will-change`` on the given properties and apply the transitions for all properties.
+
+Normally, you can leave the default value of everything, to have consistent look and feel.
+
+Usage:
+
+.. code-block:: scss
+
+    button {
+        @include atlantis.transition(width height, .5s);
+    }
 
 
 Visibility
@@ -275,10 +381,49 @@ Visibility
 ``.hide-text()``
 ================
 
+.. code-block:: scss
+
+    @include atlantis.hide-text($absolute: false);
+
+Will hide the text, so that it's invisible on normal page views, but readable for screen readers.
+
+If, for some reason, the default behavior doesn't work, you can try to move the text by an ``vw`` value, by setting
+``$absolute: true``.
+
 
 .. _atlantis/mixins/visibility/text-overflow-ellipsis:
 
 ``.text-overflow-ellipsis()``
 =============================
 
+.. code-block:: scss
 
+    @include atlantis.text-overflow-ellipsis;
+
+Prevents wrapping of text by displaying ellipsis instead.
+
+
+Functions
+#########
+
+SVG
+===
+
+.. _atlantis/functions/svg/inline-svg:
+
+``.inline-svg()``
+=================
+
+.. code-block:: scss
+
+    @include atlantis.inline-svg($svg);
+
+Inlines the SVG on the element. Will return a ``url()`` element so it can be used directly as an image.
+
+Usage:
+
+.. code-block:: scss
+
+    .element {
+        background-image: atlantis.inline-svg('<svg...>...</svg>');
+    }
