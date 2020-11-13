@@ -9,7 +9,7 @@ Directory Layout
 Assets
 ======
 
-.. code-block::
+Assets (in any project) are using this structure::
 
     .
     ├── assets/
@@ -34,7 +34,7 @@ Assets
 Symfony Projects
 ================
 
-.. code-block::
+A symfony project mainly uses a combination of default symfony structure + assets structure::
 
     .
     ├── assets/
@@ -66,28 +66,29 @@ Symfony Projects
 SCSS
 ####
 
-.. code-block::
+Inside the ``assets/scss`` directory, it can look something like this::
 
     scss/
     ├── atom/
+    │  └── ...
     ├── base/
     │  ├── _content.scss
     │  ├── _fonts.scss
     │  ├── _global.scss
-    │  ├── _icon.scss
-    │  └── _placeholder.scss
+    │  └── _icon.scss
     ├── helper/
     │  ├── _mixins.scss
     │  └── _variables.scss
     ├── molecule/
+    │  └── ...
     ├── organism/
+    │  └── ...
     ├── template/
     │  ├── __default.scss
     │  └── ...
 
 
 *   Most of the time you don't need more than the ``template/__default`` template.
-
 
 
 Project Directory Layout
