@@ -11,6 +11,14 @@
     :maxdepth: 4
 
     css/index
+    css/structure
+
+..  toctree::
+    :caption: HTML
+    :hidden:
+    :maxdepth: 4
+
+    html/index
 
 ..  toctree::
     :caption: Firefly
@@ -54,6 +62,9 @@ Also, here are the docs on how we build and structure our applications:
 
 :doc:`css/index`
     How to structure (S)CSS.
+
+:doc:`html/index`
+    How to build simple, minimal and semantic HTML.
 
 :doc:`code-style/index`
     Code Style for all programming languages, that we use.
