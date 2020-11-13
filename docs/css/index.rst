@@ -122,10 +122,10 @@ You can use atlantis for that:
 .. code-block:: scss
 
     .button {
-        color: $text;
+        color: black;
 
         @include atlantis.on-interaction("is-active") {
-            color: $highlight;
+            color: fuchsia;
         }
     }
 
