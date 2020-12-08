@@ -1,6 +1,6 @@
-#############
-CSS Structure
-#############
+#########
+Structure
+#########
 
 We use **Atomic (CSS) Design** for structuring our SCSS.
 
@@ -23,6 +23,8 @@ We use a more technical form of atomic design, that has clearer and stricter rul
     While it's great if both definitions perfectly overlap – they don't have to. But you must not adapt rules outside
     of these definitions here for structuring your SCSS, as it otherwise will lose its whole purpose.
 
+A "component" is any logically grouped layout element. That can be as simple as a "button component" and as complex as an "accordion component".
+You need to group your layout elements and these grouped things are from here on called "component".
 
 *   Every component you build is by default an **atom**.
 *   If your component uses other components (as nested selectors) it will always be the highest level of the nested
@@ -40,6 +42,60 @@ Every component can be as large as it makes sense for you. You should avoid havi
 
 To come back to the "important" section above: most of the time it makes sense to structure the atoms the same way as your (conceptual / logical) atoms. The molecules are derived from the logic defined above (in contrast to the logical grouping), so it might divert here.
 
+
+Examples
+========
+
+.. code-block:: scss
+
+    .button {
+        cursor: pointer;
+        // ...
+    }
+
+The ``.button`` component uses no other component, so it's an **atom** by default.
+
+
+.. code-block:: scss
+
+    .cta {
+        // ...
+
+        .button { // <- atom
+        }
+    }
+
+The ``.cta`` component uses the ``.button`` atom, so the CTA is a **molecule**.
+
+
+.. code-block:: scss
+
+    .accordion {
+        // ...
+
+        .accordion-title { // <- only nested class, not a component in itself
+            // ...
+        }
+    }
+
+The ``.accordion`` only uses a nested element ``.accordion-title`` which itself is no component on its own. So the accordion
+is an **atom** by default.
+
+
+.. code-block:: scss
+
+    .panel {
+        // ...
+
+        .h2 { // <- "external" class
+            color: var(--highlight);
+        }
+    }
+
+The ``.panel`` uses an "external" class ``.h2``. That class exists (in a base file), but itself is no atom.
+So the panel still is an **atom** by default.
+
+This is basically the same case as the accordion example above.
 
 
 Never position yourself
