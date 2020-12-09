@@ -4,6 +4,7 @@
     :maxdepth: 4
 
     code-style/index
+    code-style/vcs
 
 ..  toctree::
     :caption: CSS
