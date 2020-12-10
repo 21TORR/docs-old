@@ -157,3 +157,115 @@ And in your scss you can then use it like this:
     }
 
 This will apply the given color to the correct properties of your elements.
+
+
+
+File Structure
+==============
+
+Every ``atom``, ``molecule`` and ``organism`` file should only contain exactly one component, so normally a single
+selector (with possibly some nested selectors).
+
+Examples
+--------
+
+.. code-block:: scss
+
+    // please don't do that
+    .my-component {
+        // ...
+    }
+
+    .some-other-thing {
+        // ...
+    }
+
+This should be avoided. Split it into two separate files.
+
+One exception from this rule is if the selectors are *logically* grouped to a single component and are just all top level
+to avoid nesting (this should be reflected in the selector names):
+
+.. code-block:: scss
+
+    // this is okay, even if you should prefer having a single top level selector
+    .accordion {
+        // ...
+    }
+
+    .accordion-title {
+        // ...
+    }
+
+.. tip::
+
+    Having a single top level selector is in most cases a great idea.
+    You should avoid over-optimizing for very short selectors. This one additional top level is great, rather focus on
+    keeping the nesting to a minimum *inside* this top level selector.
+
+The name should of the file should exactly match the top level selector.
+
+Only example: for ``template`` s it is preferred, to have the project class name as prefix.
+
+    *   ``template/__default.scss`` -> class name: ``.21torr``
+    *   ``template/_blog.scss`` -> class name: ``.21torr-blog``
+    *   ``template/_shop.scss`` -> class name: ``.21torr-shop``
+
+
+
+Media Queries
+#############
+
+In most cases it is useful to build your SCSS mobile first, as normally you only add things to your styles, when going
+from narrower to wider screens. It can make sense to have a single media query for special settings for only the phone version.
+
+It is **heavily** recommended to add named media queries in your project:
+
+.. code-block:: scss
+    :caption: helper/_mixins.scss
+
+    $tablet-width: 90rem;
+    $desktop-width: 120rem;
+
+    @mixin on-phone-only {
+        @include atlantis.on-max-width($tablet-width - .1rem) {
+            @content;
+        }
+    }
+
+    @mixin on-tablet {
+        @include atlantis.on-min-width($tablet-width) {
+            @content;
+        }
+    }
+
+    @mixin on-desktop {
+        @include atlantis.on-min-width($desktop-width) {
+            @content;
+        }
+    }
+
+And then only use these named mixins in your app.
+
+To motivate a clear structure and avoid surprising overrides, you should only have a single media query per size at the
+end of your main component selector. It is also recommended to order the media queries by ascending screen width, starting
+with the "phone only" version:
+
+
+.. code-block:: scss
+    :caption: molecule/_my-component.scss
+
+    .my-component {
+        // ...
+
+        @include on-phone-only {
+            // ...
+        }
+
+        @include on-tablet {
+            // ...
+        }
+
+        @include on-desktop {
+            // ...
+        }
+    }
