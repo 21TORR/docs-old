@@ -6,6 +6,9 @@ GitLab
 Merge Request
 #############
 
+*   Merge Requests should have no more than 1000 changed lines (total of removed + added). Otherwise reviewing them gets really hard. You can always split your large change in several consecutive merge requests.
+
+
 Please give your merge request descriptive titles. That includes merge request that just merge `develop` into `master`.
 
 Merge Requests should have the following structure::
