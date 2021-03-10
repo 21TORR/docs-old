@@ -9,7 +9,7 @@ Installation
 
 .. code-block:: bash
 
-    composer req 21torr/umbrella
+    composer require 21torr/umbrella
 
 Add the package config:
 
@@ -96,7 +96,7 @@ Standalone
 Variations
 ##########
 
-Most of the time, you have some variables in your templates to modify the behaviour. You can then add a "variations"
+Most of the time, you have some variables in your templates to modify the behavior. You can then add a "variations"
 template to have a quick look on all supported variations:
 
 With this base component:
