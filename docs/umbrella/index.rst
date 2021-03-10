@@ -35,6 +35,31 @@ and then use it in your other component:
         </div>
     </form>
 
+You can also pass variables to your component as seen above:
+
+.. code-block:: twig
+
+    {# without variables #}
+    {{ umbrella("atom", "button") }}
+
+    {# with variables #}
+    {{ umbrella("atom", "button", {label: "ohai", type: "is-primary") }}
+
+
+
+Embedding
+=========
+
+(to be written)
+
+
+
+Standalone
+==========
+
+(to be written
+
+
 
 Variations
 ##########
