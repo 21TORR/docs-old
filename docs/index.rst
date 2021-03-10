@@ -44,6 +44,13 @@
     atlantis/index
     atlantis/library
 
+..  toctree::
+    :caption: Umbrella
+    :hidden:
+    :maxdepth: 4
+
+    umbrella/index
+
 ###########
 21TORR Docs
 ###########
@@ -58,6 +65,9 @@ These are the docs for all 21TORR internal libraries and tools.
 
 :doc:`atlantis/index`
     A SCSS mixin library, that provides different mixins and helpers, commonly used when building layouts.
+
+:doc:`umbrella/index`
+    A template preview system, to ease building and maintaining templates.
 
 Also, here are the docs on how we build and structure our applications:
 
