@@ -2,7 +2,7 @@
 Umbrella
 ########
 
-**Umbrella** is a template preview library, that eases implementation and testing of templates.
+**Umbrella** is a template preview library, that eases implementation and testing of templates. It is a Symfony bundle.
 
 Installation
 ############
@@ -10,6 +10,38 @@ Installation
 .. code-block:: bash
 
     composer req 21torr/umbrella
+
+Add the package config:
+
+.. code-block:: yaml
+    :caption: config/packages/umbrella.yaml
+
+    umbrella:
+        assets:
+            # load your assets here, for example via the assets bundle
+            - '@app/css/app.css'
+
+Add the route config:
+
+.. code-block:: yaml
+    :caption: config/routes/umbrella.yaml
+
+    _import.umbrella:
+        resource: "@UmbrellaBundle/config/routes.yaml"
+        prefix: /_layout
+
+
+.. hint::
+
+    In production you should always disable the whole bundle (only enable it in ``dev``) – as the templates
+    should not be publicly visible.
+
+
+Configuration
+#############
+
+*(to be written)*
+
 
 
 Including Other Components
@@ -50,14 +82,14 @@ You can also pass variables to your component as seen above:
 Embedding
 =========
 
-(to be written)
+*(to be written)*
 
 
 
 Standalone
 ==========
 
-(to be written
+*(to be written)*
 
 
 
