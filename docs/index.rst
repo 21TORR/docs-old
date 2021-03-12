@@ -22,12 +22,12 @@
     html/index
 
 ..  toctree::
-    :caption: Firefly
+    :caption: Atlantis
     :hidden:
     :maxdepth: 4
 
-    firefly/index
-    firefly/firefly.js
+    atlantis/index
+    atlantis/library
 
 .. toctree::
     :caption: Dune
@@ -37,12 +37,19 @@
     dune/index
 
 ..  toctree::
-    :caption: Atlantis
+    :caption: Feature Flags
     :hidden:
     :maxdepth: 4
 
-    atlantis/index
-    atlantis/library
+    feature-flags/index
+
+..  toctree::
+    :caption: Firefly
+    :hidden:
+    :maxdepth: 4
+
+    firefly/index
+    firefly/firefly.js
 
 ..  toctree::
     :caption: Umbrella
@@ -57,14 +64,17 @@
 
 These are the docs for all 21TORR internal libraries and tools.
 
-:doc:`firefly/index`
-    A build tool to build JS + SCSS applications.
+:doc:`atlantis/index`
+    A SCSS mixin library, that provides different mixins and helpers, commonly used when building layouts.
 
 :doc:`dune/index`
     A JS library, that provides helper functions for the most common tools.
 
-:doc:`atlantis/index`
-    A SCSS mixin library, that provides different mixins and helpers, commonly used when building layouts.
+:doc:`feature-flags/index`
+    Bundle for handling feature flags.
+
+:doc:`firefly/index`
+    A build tool to build JS + SCSS applications.
 
 :doc:`umbrella/index`
     A template preview system, to ease building and maintaining templates.
