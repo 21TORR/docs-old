@@ -10,6 +10,21 @@ Atomic CSS Design
 All docs about the general structure are in its own article, under :doc:`./structure`.
 
 
+Basics
+######
+
+*   Long comma separated values may be chopped up into multiple lines. Then every line should only contain a single value and be indented once:
+
+    .. code-block:: scss
+
+        .element {
+            background-image:
+                linear-gradient(#abc, #def),
+                linear-gradient(#000, #555);
+        }
+
+*   Use placeholders for ``@extend`` ing, so only use ``@extend %placeholder``.
+
 Nesting
 #######
 
@@ -161,13 +176,13 @@ This will apply the given color to the correct properties of your elements.
 
 
 File Structure
-==============
+##############
 
 Every ``atom``, ``molecule`` and ``organism`` file should only contain exactly one component, so normally a single
 selector (with possibly some nested selectors).
 
 Examples
---------
+========
 
 .. code-block:: scss
 
@@ -266,6 +281,49 @@ with the "phone only" version:
         }
 
         @include on-desktop {
+            // ...
+        }
+    }
+
+
+Order
+#####
+
+The order within an element should be like this:
+
+1.  ``@extend``
+2.  local variable definitions
+3.  ``@include`` without a body
+4.  Definitions of the element
+5.  ``@include`` with a body
+6.  Modifiers of this element
+7.  Child element definitions
+
+Example:
+
+.. code-block:: scss
+
+    .my-example {
+        // @extend %placeholder;
+        background-color: red;
+    }
+
+    .my-other-example {
+        // @extend %placeholder;
+        $test: 42px;
+        $width-columns: 4;
+        @include mixins.container;
+        @include mixins.grid($width-columns);
+
+        border: 1px solid red;
+        color: green;
+        background-color: blue;
+
+        @include mixins.on-interaction {
+            color: red;
+        }
+
+        a {
             // ...
         }
     }
