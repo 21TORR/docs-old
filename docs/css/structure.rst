@@ -161,7 +161,7 @@ That's why it makes sense to separate the styling of the two. The main layout (+
 to look neutral, so that it is the easiest, to style structure components, as these will make up most of your application.
 
 For content, we just use a global ``.content`` marker class. This class styles the content according to the "running
-text styling" rules. It should mainly style its direct children + some more special cases.
+text styling" rules. It should only style its direct children + some more special cases.
 
 Avoid styling too freely, so that complex things like tables don't break.
 
